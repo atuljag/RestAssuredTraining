@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-18T17:52:02 IST" name="Default suite" finished-at="2024-08-18T17:52:12 IST" duration-ms="9816">
+  <suite started-at="2024-08-19T12:13:12 IST" name="Default suite" finished-at="2024-08-19T12:13:19 IST" duration-ms="6511">
     <groups>
     </groups>
-    <test started-at="2024-08-18T17:52:02 IST" name="Default test" finished-at="2024-08-18T17:52:12 IST" duration-ms="9816">
-      <class name="day1.HTTPRequests">
-        <test-method signature="getUsers()[pri:1, instance:day1.HTTPRequests@59fd97a8]" started-at="2024-08-18T17:52:02 IST" name="getUsers" finished-at="2024-08-18T17:52:09 IST" duration-ms="6943" status="PASS">
+    <test started-at="2024-08-19T12:13:12 IST" name="Default test" finished-at="2024-08-19T12:13:19 IST" duration-ms="6511">
+      <class name="day2.DiffWaysToCreatePostRequestBody">
+        <test-method signature="CreateUser()[pri:0, instance:day2.DiffWaysToCreatePostRequestBody@59fd97a8]" started-at="2024-08-19T12:13:12 IST" name="CreateUser" finished-at="2024-08-19T12:13:19 IST" duration-ms="6419" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUsers -->
-        <test-method signature="ctreateUser()[pri:2, instance:day1.HTTPRequests@59fd97a8]" started-at="2024-08-18T17:52:09 IST" name="ctreateUser" finished-at="2024-08-18T17:52:11 IST" duration-ms="1689" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ctreateUser -->
-        <test-method signature="updateUser()[pri:3, instance:day1.HTTPRequests@59fd97a8]" started-at="2024-08-18T17:52:11 IST" name="updateUser" finished-at="2024-08-18T17:52:11 IST" duration-ms="589" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUser -->
-        <test-method signature="deleteUser()[pri:4, instance:day1.HTTPRequests@59fd97a8]" started-at="2024-08-18T17:52:11 IST" name="deleteUser" finished-at="2024-08-18T17:52:12 IST" duration-ms="482" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-      </class> <!-- day1.HTTPRequests -->
+        </test-method> <!-- CreateUser -->
+      </class> <!-- day2.DiffWaysToCreatePostRequestBody -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
