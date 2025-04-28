@@ -15,14 +15,14 @@ import java.util.HashMap;
 public class DiffWaysToCreatePostRequestBody {
 
 	// 1. Post request body using hashmap
-	// @Test
+	 @Test
 	void CreateUserByHashmap() {
 
 		HashMap data = new HashMap();
 		data.put("name", "Atul");
 		data.put("job", "Engineer");
 
-		given().contentType("application/json").body(data)
+		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
 
 				.when().post("https://reqres.in/api/users")
 
@@ -31,14 +31,14 @@ public class DiffWaysToCreatePostRequestBody {
 	}
 
 	// 2. Post request body using org.json
-	// @Test
+	 @Test
 	void CreateUserByUsingJSONLibrary() {
 
 		JSONObject data = new JSONObject();
 		data.put("name", "Atul");
 		data.put("job", "Engineer");
 
-		given().contentType("application/json").body(data.toString())
+		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data.toString())
 
 				.when().post("https://reqres.in/api/users")
 
@@ -46,7 +46,7 @@ public class DiffWaysToCreatePostRequestBody {
 	}
 
 	// 3. Post request body using POJO
-	// @Test
+	 @Test
 	void CreateUserUsingPOJO() {
 
 		Pojo_PostRequest data = new Pojo_PostRequest();
@@ -54,7 +54,7 @@ public class DiffWaysToCreatePostRequestBody {
 		data.setName("Atul");
 		data.setJob("Engineer");
 
-		given().contentType("application/json").body(data)
+		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
 
 				.when().post("https://reqres.in/api/users")
 
@@ -70,7 +70,7 @@ public class DiffWaysToCreatePostRequestBody {
 		JSONTokener jt = new JSONTokener(fr);
 		JSONObject data = new JSONObject(jt);
 
-		given().contentType("application/json").body(data.toString())
+		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data.toString())
 
 				.when().post("https://reqres.in/api/users")
 
