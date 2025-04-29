@@ -27,7 +27,7 @@ public class HTTPRequests {
     }
 
     @Test(priority = 2)
-    void ctreateUser() {
+    void createUser() {
         HashMap data = new HashMap();
         data.put("name", "Atul");
         data.put("job", "Engineer");
