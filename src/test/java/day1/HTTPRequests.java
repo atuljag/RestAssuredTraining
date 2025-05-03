@@ -14,7 +14,7 @@ public class HTTPRequests {
     @Test(priority = 1)
     void getUsers() {
 
-        given()
+        given().header("x-api-key", "reqres-free-v1")
 
                 .when()
 
