@@ -14,7 +14,7 @@ public class HTTPRequests {
     @Test(priority = 1)
     void getUsers() {
 
-        given()
+        given().header("x-api-key", "reqres-free-v1")
 
                 .when()
 
@@ -61,7 +61,7 @@ public class HTTPRequests {
 
         given().header("x-api-key", "reqres-free-v1").contentType("application/json")
 
-				.when().delete("https://reqres.in/api/users/" + id)
+                .when().delete("https://reqres.in/api/users/" + id)
 
                 .then().statusCode(204);
     }
