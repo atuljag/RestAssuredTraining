@@ -3,6 +3,7 @@ package day2;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -13,67 +14,95 @@ import java.util.HashMap;
 
 public class DiffWaysToCreatePostRequestBody {
 
-	// 1. Post request body using hashmap
-	 @Test
-	void CreateUserByHashmap() {
+    // 1. Post request body using hashmap
+    @Test
+    void CreateUserByHashmap() {
 
-		HashMap data = new HashMap();
-		data.put("name", "Atul");
-		data.put("job", "Engineer");
+        HashMap data = new HashMap();
+        data.put("name", "Atul");
+        data.put("job", "Engineer");
 
-		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
+                .body(data)
 
-				.when().post("https://reqres.in/api/users")
+                .when()
+                .post("https://reqres.in/api/users")
 
-				.then().statusCode(201).body("name", equalTo("Atul")).log().all();
+                .then()
+                .statusCode(201)
+                .body("name", equalTo("Atul"))
+                .log().all();
 
-	}
+    }
 
-	// 2. Post request body using org.json
-	 @Test
-	void CreateUserByUsingJSONLibrary() {
+    // 2. Post request body using org.json
+    @Test
+    void CreateUserByUsingJSONLibrary() {
 
-		JSONObject data = new JSONObject();
-		data.put("name", "Atul");
-		data.put("job", "Engineer");
+        JSONObject data = new JSONObject();
+        data.put("name", "Atul");
+        data.put("job", "Engineer");
 
-		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data.toString())
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
+                .body(data.toString())
 
-				.when().post("https://reqres.in/api/users")
+                .when()
+                .post("https://reqres.in/api/users")
 
-				.then().statusCode(201).body("name", equalTo("Atul")).log().body();
-	}
+                .then()
+                .statusCode(201)
+                .body("name", equalTo("Atul"))
+                .log().body();
+    }
 
-	// 3. Post request body using POJO
-	 @Test
-	void CreateUserUsingPOJO() {
+    // 3. Post request body using POJO
+    @Test
+    void CreateUserUsingPOJO() {
 
-		Pojo_PostRequest data = new Pojo_PostRequest();
+        Pojo_PostRequest data = new Pojo_PostRequest();
 
-		data.setName("Atul");
-		data.setJob("Engineer");
+        data.setName("Atul");
+        data.setJob("Engineer");
 
-		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
+                .body(data)
 
-				.when().post("https://reqres.in/api/users")
+                .when()
+                .post("https://reqres.in/api/users")
 
-				.then().statusCode(201).body("name", equalTo("Atul")).log().body();
-	}
+                .then()
+                .statusCode(201)
+                .body("name", equalTo("Atul"))
+                .log().body();
+    }
 
-	// 4. Post request body using external json file
-	@Test
-	void CreateUserUsingExternalJSONFile() throws FileNotFoundException {
+    // 4. Post request body using external json file
+    @Test
+    void CreateUserUsingExternalJSONFile() throws FileNotFoundException {
 
-		File f = new File(".//body.json");
-		FileReader fr = new FileReader(f);
-		JSONTokener jt = new JSONTokener(fr);
-		JSONObject data = new JSONObject(jt);
+        File f = new File(".//body.json");
+        FileReader fr = new FileReader(f);
+        JSONTokener jt = new JSONTokener(fr);
+        JSONObject data = new JSONObject(jt);
 
-		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data.toString())
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
+                .body(data.toString())
 
-				.when().post("https://reqres.in/api/users")
+                .when()
+                .post("https://reqres.in/api/users")
 
-				.then().statusCode(201).body("name", equalTo("Atul")).log().body();
-	}
+                .then()
+                .statusCode(201)
+                .body("name", equalTo("Atul"))
+                .log().body();
+    }
 
 }

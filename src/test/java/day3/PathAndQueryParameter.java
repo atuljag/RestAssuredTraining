@@ -7,12 +7,13 @@ import static io.restassured.RestAssured.given;
 public class PathAndQueryParameter {
 
     @Test
-    void testPathAndQueryParam(){
+    void testPathAndQueryParam() {
 
         given()
-                .pathParams("myPath","users")
-                .queryParam("page",2)
-                .queryParam("id",8)
+                .header("x-api-key", "reqres-free-v1")
+                .pathParams("myPath", "users")
+                .queryParam("page", 2)
+                .queryParam("id", 8)
 
                 .when()
                 .get("https://reqres.in/api/{myPath}")

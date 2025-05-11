@@ -48,22 +48,33 @@ public class HTTPRequests {
         data.put("name", "Atul Jagtap");
         data.put("job", "Test Engineer");
 
-        given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
+                .body(data)
 
-                .when().put("https://reqres.in/api/users/" + id)
+                .when()
+                .put("https://reqres.in/api/users/" + id)
 
-                .then().statusCode(200).body("name", equalTo("Atul Jagtap")).log().all();
+                .then()
+                .statusCode(200)
+                .body("name", equalTo("Atul Jagtap"))
+                .log().all();
 
     }
 
     @Test(priority = 4)
     void deleteUser() {
 
-        given().header("x-api-key", "reqres-free-v1").contentType("application/json")
+        given()
+                .header("x-api-key", "reqres-free-v1")
+                .contentType("application/json")
 
-                .when().delete("https://reqres.in/api/users/" + id)
+                .when().
+                delete("https://reqres.in/api/users/" + id)
 
-                .then().statusCode(204);
+                .then()
+                .statusCode(204);
     }
 
 }
